@@ -31,6 +31,12 @@ class Navigation extends Component {
         <NavItem>
           <NavLink to='/trails' style={{ textDecoration: 'none' }}>&nbsp; Trails &nbsp;</NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink to='/trails/addicks' style={{ textDecoration: 'none' }}>&nbsp; Addicks Trails &nbsp;</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to='/trails/barker' style={{ textDecoration: 'none' }}>&nbsp; Barker Trails &nbsp;</NavLink>
+        </NavItem>
         </Nav>
       </Collapse>
       </Navbar>
