@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BackButton from '../components/BackButton';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class TrailsShow extends Component {
 
@@ -28,7 +29,7 @@ class TrailsShow extends Component {
             <ListGroupItem><p>{this.props.trail.description}</p></ListGroupItem>
         </ListGroup>
         <ListGroup>
-            <ListGroupItem><a href={this.props.trail.maplink} target="_blank">Link to trail map</a></ListGroupItem>
+            <Link key={this.props.trail.id} className="list-group-item list-group-item-action" to={this.props.trail.maplink} target="_blank">Link to trail map</Link>
         </ListGroup>
       </div>
     );
