@@ -16,8 +16,8 @@ class App extends Component {
             <div className = "App" >
               <Route path = "/trails" component = { TrailsPage } />
               <Route exact path = "/" component = { Homepage } />
-              <Route path = "/trails/addicks" component = { AddicksTrailsPage } />
-              <Route path = "/trails/barker" component = { BarkerTrailsPage } />
+              <Route path = "/addicks" component = { AddicksTrailsPage } />
+              <Route path = "/barker" component = { BarkerTrailsPage } />
             </div>
         </div>
       </Router>
