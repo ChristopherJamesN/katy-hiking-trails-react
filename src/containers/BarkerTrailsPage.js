@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getTrails } from '../actions';
+import { getBarkerTrails } from '../actions';
 import { bindActionCreators } from 'redux';
-import TrailsList from '../components/TrailsList'
+import BarkerTrailsList from '../components/BarkerTrailsList'
 import TrailsShow from './TrailsShow';
 
 class BarkerTrailsPage extends Component {
 
   componentDidMount() {
-    this.props.getTrails();
+    this.props.getBarkerTrails();
   }
 
   render() {
@@ -20,7 +20,7 @@ class BarkerTrailsPage extends Component {
         <Route exact path={this.props.match.url} render={() => (
           <div>
             <h3>Select a trail from the list to view.</h3>
-            <TrailsList trails={this.props.trails} />
+            <BarkerTrailsList trails={this.props.trails} />
           </div>
         )}/>
       </Switch>
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { getTrails: bindActionCreators(getTrails, dispatch) }
+  return { getBarkerTrails: bindActionCreators(getBarkerTrails, dispatch) }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BarkerTrailsPage);
