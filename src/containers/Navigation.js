@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, Nav, NavItem, NavbarToggler } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
 
 class Navigation extends Component {
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Alert } from 'reactstrap';
 
 class Homepage extends Component {
     render() {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BackButton from '../components/BackButton';
-import { bindActionCreators } from 'redux';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class TrailsShow extends Component {
