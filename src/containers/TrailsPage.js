@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getTrails } from '../actions';
 import { bindActionCreators } from 'redux';
 import TrailsList from '../components/TrailsList'
+import TrailsShow from './TrailsShow';
 
 class TrailsPage extends Component {
 
@@ -15,7 +16,15 @@ class TrailsPage extends Component {
     return (
     <div>
       <p>All Trails</p>
-      <TrailsList trails={this.props.trails} />
+      <Switch>
+        <Route path={`${this.props.match.url}/:trailId`} component={TrailsShow}/>
+        <Route exact path={this.props.match.url} render={() => (
+          <div>
+            <h3>Select a trail from the list to view.</h3>
+            <TrailsList trails={this.props.trails} />
+          </div>
+        )}/>
+      </Switch>
     </div>
   )}
 }

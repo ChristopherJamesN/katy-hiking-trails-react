@@ -38,7 +38,7 @@ class TrailsShow extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   // eslint-disable-next-line
-  const trail = state.trailsReducer.trails.find(note => trail.id == ownProps.match.params.trailId)
+  const trail = state.trailsReducer.trails.find(trail => trail.id == ownProps.match.params.trailId)
 
   if (trail) {
     return { trail }
