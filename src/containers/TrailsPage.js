@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getTrails } from '../actions';
 import { bindActionCreators } from 'redux';
+import TrailsList from '../components/TrailsList'
 
 class TrailsPage extends Component {
 
@@ -13,7 +14,8 @@ class TrailsPage extends Component {
   render() {
     return (
     <div>
-      <p>Trails go here</p>
+      <p>All Trails</p>
+      <TrailsList trails={this.props.trails} />
     </div>
   )}
 }
