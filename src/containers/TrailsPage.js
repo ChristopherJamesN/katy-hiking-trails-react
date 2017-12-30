@@ -15,7 +15,6 @@ class TrailsPage extends Component {
   render() {
     return (
     <div>
-      <p>All Trails</p>
       <Switch>
         <Route path={`${this.props.match.url}/:trailId`} component={TrailsShow}/>
         <Route exact path={this.props.match.url} render={() => (

@@ -11,7 +11,7 @@ class TrailsShow extends Component {
       this.state = {
         name: this.props.trail.name,
         description: this.props.trail.description,
-        link: this.props.trail.link,
+        maplink: this.props.trail.maplink,
       };
     }
 
@@ -29,7 +29,7 @@ class TrailsShow extends Component {
             <ListGroupItem><p>{this.props.trail.description}</p></ListGroupItem>
         </ListGroup>
         <ListGroup>
-            <ListGroupItem><a href={this.props.trail.link} target="_blank">Link to Associated Article</a></ListGroupItem>
+            <ListGroupItem><a href={this.props.trail.maplink} target="_blank">Link to trail map</a></ListGroupItem>
         </ListGroup>
       </div>
     );
