@@ -13,15 +13,7 @@ class TrailsPage extends Component {
   render() {
     return (
     <div>
-      <Switch>
-        <Route path={`${this.props.match.url}/:noteId`} component={NotesShow}/>
-        <Route exact path={this.props.match.url} render={() => (
-          <div>
-            <h3>Please select a story from the list.</h3>
-            <NotesList notes={this.props.notes} />
-          </div>
-        )}/>
-      </Switch>
+      <p>Trails go here</p>
     </div>
   )}
 }

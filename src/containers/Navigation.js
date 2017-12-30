@@ -39,8 +39,4 @@ class Navigation extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { isLoggedIn: state.userReducer.isLoggedIn }
-}
-
-export default connect(mapStateToProps)(Navigation);
+export default Navigation;

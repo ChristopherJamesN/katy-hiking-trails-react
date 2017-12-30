@@ -1,10 +1,12 @@
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import loading from './reducers/loading';
+import trailsReducer from './reducers/trailsReducer';
 import { loadState, saveState } from './localStorage';
 
 const reducers = combineReducers({
   loading,
+  trailsReducer,
 });
 
 const persistedState = loadState();
