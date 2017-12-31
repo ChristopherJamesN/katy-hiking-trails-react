@@ -1,4 +1,24 @@
 .App {
   text-align: left;
-  padding: 20px;
+  margin: 30px;
+  padding: 30px;
+  font-family: sans-serif;
+}
+
+.Nav-home {
+  font-family: sans-serif;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
 }
