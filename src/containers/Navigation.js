@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, Nav, NavItem, NavbarToggler } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { Collapse, Navbar, Nav, NavItem, NavbarToggler, NavLink, NavbarBrand } from 'reactstrap';
 
 class Navigation extends Component {
 
@@ -23,20 +22,18 @@ class Navigation extends Component {
     return (
       <Navbar color='light' light expand="md" className="sticky-top">
       <NavbarToggler onClick={this.toggle} />
+      <NavbarBrand href="/">Home</NavbarBrand>
       <Collapse isOpen={this.state.isOpen} navbar>
-        <Nav>
-        <li>
-          <NavLink to='/' style={{ textDecoration: 'none' }}>&nbsp; Home &nbsp;</NavLink>
-        </li>
-        <NavItem>
-          <NavLink to='/trails' style={{ textDecoration: 'none' }}>&nbsp; Trails &nbsp;</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to='/addicks' style={{ textDecoration: 'none' }}>&nbsp; Addicks Trails &nbsp;</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to='/barker' style={{ textDecoration: 'none' }}>&nbsp; Barker Trails &nbsp;</NavLink>
-        </NavItem>
+        <Nav className="ml-auto" navbar>
+          <NavItem>
+            <NavLink href='/trails'>Trails</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='/addicks'>Addicks Trails</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='/barker'>Barker Trails</NavLink>
+          </NavItem>
         </Nav>
       </Collapse>
       </Navbar>
