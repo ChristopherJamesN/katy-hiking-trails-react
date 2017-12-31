@@ -30,9 +30,11 @@ class Navigation extends Component {
           <NavItem>
             <NavLink to='/trails' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Trails &nbsp;</NavLink>
           </NavItem>
+          <br></br>
           <NavItem>
             <NavLink to='/addicks' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Addicks Trails &nbsp;</NavLink>
           </NavItem>
+          <br></br>
           <NavItem>
             <NavLink to='/barker' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Barker Trails &nbsp;</NavLink>
           </NavItem>
