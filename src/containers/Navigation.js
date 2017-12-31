@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, Nav, NavItem, NavbarToggler, NavLink, NavbarBrand } from 'reactstrap';
+import { Collapse, Navbar, Nav, NavItem, NavbarToggler, NavbarBrand } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 class Navigation extends Component {
 
@@ -26,13 +27,13 @@ class Navigation extends Component {
       <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href='/trails'>Trails</NavLink>
+            <NavLink to='/trails' style={{ textDecoration: 'none' }}>&nbsp; Trails &nbsp;</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href='/addicks'>Addicks Trails</NavLink>
+            <NavLink to='/addicks' style={{ textDecoration: 'none' }}>&nbsp; Addicks Trails &nbsp;</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href='/barker'>Barker Trails</NavLink>
+            <NavLink to='/barker' style={{ textDecoration: 'none' }}>&nbsp; Barker Trails &nbsp;</NavLink>
           </NavItem>
         </Nav>
       </Collapse>
