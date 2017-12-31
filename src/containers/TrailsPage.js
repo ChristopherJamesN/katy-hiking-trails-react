@@ -19,6 +19,7 @@ class TrailsPage extends Component {
         <Route path={`${this.props.match.url}/:trailId`} component={TrailsShow}/>
         <Route exact path={this.props.match.url} render={() => (
           <div>
+            <h1>All Trails</h1>
             <h3>Select a trail from the list to view.</h3>
             <TrailsList trails={this.props.trails} />
           </div>
