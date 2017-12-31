@@ -26,14 +26,15 @@ class Navigation extends Component {
       <NavbarBrand href="/">Home</NavbarBrand>
       <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
+          <br></br>
           <NavItem>
-            <NavLink to='/trails' style={{ textDecoration: 'none' }} onClick={this.toggle}>&nbsp; Trails &nbsp;</NavLink>
+            <NavLink to='/trails' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Trails &nbsp;</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to='/addicks' style={{ textDecoration: 'none' }} onClick={this.toggle}>&nbsp; Addicks Trails &nbsp;</NavLink>
+            <NavLink to='/addicks' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Addicks Trails &nbsp;</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to='/barker' style={{ textDecoration: 'none' }} onClick={this.toggle}>&nbsp; Barker Trails &nbsp;</NavLink>
+            <NavLink to='/barker' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Barker Trails &nbsp;</NavLink>
           </NavItem>
         </Nav>
       </Collapse>
