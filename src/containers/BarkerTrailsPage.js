@@ -21,7 +21,11 @@ class BarkerTrailsPage extends Component {
           <div>
             <h1>Barker Trails</h1>
             <h3>Select a trail from the list to view.</h3>
+            {this.props.trails.length === 0 ? (
+              <h4>Trails are loading.</h4>
+            ):(
             <BarkerTrailsList trails={this.props.trails} />
+            )}
           </div>
         )}/>
       </Switch>
