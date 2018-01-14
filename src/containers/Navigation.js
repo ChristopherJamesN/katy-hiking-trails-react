@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, Nav, NavItem, NavbarToggler, NavbarBrand } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Navigation extends Component {
 
@@ -38,6 +39,30 @@ class Navigation extends Component {
           <NavItem>
             <NavLink to='/barker' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Barker Trails &nbsp;</NavLink>
           </NavItem>
+          <br></br>
+          {!this.props.isLoggedIn ? (
+          <Nav navbar>
+            <NavItem>
+              <NavLink to='/signin' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Login &nbsp;</NavLink>
+            </NavItem>
+            <br></br>
+            <NavItem>
+              <NavLink to='/signup' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Sign Up &nbsp;</NavLink>
+            </NavItem>
+            <br></br>
+          </Nav>
+          ) : (
+          <Nav navbar>
+            <NavItem>
+              <NavLink to='/notes' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Saved Stories &nbsp;</NavLink>
+            </NavItem>
+            <br></br>
+            <NavItem>
+              <NavLink to='/signout' style={{ textDecoration: 'none', color: 'gray' }} onClick={this.toggle}>&nbsp; Sign Out &nbsp;</NavLink>
+            </NavItem>
+            <br></br>
+          </Nav>
+          )}
         </Nav>
       </Collapse>
       </Navbar>
@@ -45,4 +70,8 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+const mapStateToProps = (state) => {
+  return { isLoggedIn: state.userReducer.isLoggedIn }
+}
+
+export default connect(mapStateToProps)(Navigation);
