@@ -8,6 +8,7 @@ import AddicksTrailsPage from './containers/AddicksTrailsPage';
 import SignOutLink from './components/auth/SignOutLink';
 import SignInForm from './components/auth/SignInForm';
 import SignUpForm from './components/auth/SignUpForm';
+import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
@@ -31,4 +32,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.userReducer.isLoggedIn
+  };
+}
+
+export default connect(mapStateToProps)(App);
