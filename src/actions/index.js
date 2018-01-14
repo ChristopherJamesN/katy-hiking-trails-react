@@ -28,10 +28,10 @@ export function persistTrail(name, description, link, comments) {
   }
 }
 
-export function updateTRAIL(noteId, name, description, link, comments) {
+export function updateTRAIL(trailId, name, description, link, comments) {
   return (dispatch) => {
     dispatch({ type: 'SAVING_TRAIL' })
-    return fetch(`/api/notes/${noteId}`, {
+    return fetch(`/api/notes/${trailId}`, {
       method: "put", body: JSON.stringify({note:{
         name: name,
         description: description,
@@ -55,7 +55,7 @@ export function updateTRAIL(noteId, name, description, link, comments) {
 export function deleteTrail(trailId) {
   return (dispatch) => {
     dispatch({ type: 'DELETING_TRAIL' })
-    return fetch(`/api/notes/${noteId}`, {
+    return fetch(`/api/notes/${trailId}`, {
       method: "delete",
        headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }
     })
