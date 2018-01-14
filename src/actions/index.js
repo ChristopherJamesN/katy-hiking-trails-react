@@ -118,7 +118,9 @@ export function getBarkerTrails() {
 export function jwt(data, routerHistory) {
   return (dispatch) => {
     dispatch({ type: 'LOADING' });
-    return fetch('/user_token', {
+    var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
+      targetUrl = 'https://katy-hiking-trails.herokuapp.com/trails/user_token'
+    return fetch(proxyUrl + targetUrl, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -133,7 +135,8 @@ export function jwt(data, routerHistory) {
           localStorage.setItem('jwt', data.jwt)
           dispatch({ type: 'RETURN_JWT'});
           dispatch({ type: 'LOADING' });
-          return fetch('/api/users/:id', {
+            var targetUrl1 = 'https://katy-hiking-trails.herokuapp.com/users/:id.json'
+          return fetch(proxyUrl + targetUrl1, {
             method: 'GET',
             headers: {
               Authorization: 'Bearer ' + localStorage.getItem('jwt')
@@ -159,7 +162,9 @@ export function jwt(data, routerHistory) {
 export function signUp(data, routerHistory) {
   return (dispatch) => {
     dispatch({ type: 'LOADING' });
-    return fetch('/api/register', {
+    var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
+      targetUrl = 'https://katy-hiking-trails.herokuapp.com/register'
+    return fetch(proxyUrl + targetUrl, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -174,7 +179,8 @@ export function signUp(data, routerHistory) {
           localStorage.setItem('jwt', data.jwt)
           dispatch({ type: 'RETURN_JWT' });
           dispatch({ type: 'LOADING' });
-          return fetch('/api/users/:id', {
+            var targetUrl1 = 'https://katy-hiking-trails.herokuapp.com/users/:id.json'
+          return fetch(proxyUrl + targetUrl1, {
             method: 'GET',
             headers: {
               Authorization: 'Bearer ' + localStorage.getItem('jwt')
