@@ -119,7 +119,7 @@ export function jwt(data, routerHistory) {
   return (dispatch) => {
     dispatch({ type: 'LOADING' });
     var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
-      targetUrl = 'https://katy-hiking-trails.herokuapp.com/trails/user_token'
+      targetUrl = 'https://katy-hiking-trails.herokuapp.com/users/sign_in'
     return fetch(proxyUrl + targetUrl, {
       method: 'POST',
       headers: {
@@ -163,7 +163,7 @@ export function signUp(data, routerHistory) {
   return (dispatch) => {
     dispatch({ type: 'LOADING' });
     var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
-      targetUrl = 'https://katy-hiking-trails.herokuapp.com/register'
+      targetUrl = 'https://katy-hiking-trails.herokuapp.com/users'
     return fetch(proxyUrl + targetUrl, {
       method: 'POST',
       headers: {
