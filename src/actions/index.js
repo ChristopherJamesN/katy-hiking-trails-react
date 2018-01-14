@@ -11,6 +11,65 @@ export function getFavoriteTrails() {
   };
 }
 
+export function persistTrail(name, description, link, comments) {
+  const noteInfo = JSON.stringify({
+    note:{
+      name: name,
+      description: description,
+      link: link,
+      comments: comments
+    }
+  });
+  return (dispatch) => {
+    dispatch({ type: 'SAVING_TRAIL' })
+    return fetch('/api/notes', {
+      method: "post", body: noteInfo, headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }})
+      .then(response => response.json()).then(payload => dispatch({ type: 'ADD_TRAIL', payload }));
+  }
+}
+
+export function updateTRAIL(noteId, name, description, link, comments) {
+  return (dispatch) => {
+    dispatch({ type: 'SAVING_TRAIL' })
+    return fetch(`/api/notes/${noteId}`, {
+      method: "put", body: JSON.stringify({note:{
+        name: name,
+        description: description,
+        link: link,
+        comments: comments
+      }
+    }), headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }
+    })
+      .then(response => response.json()).then(payload => dispatch({ type: 'SAVING_NOTE' }))
+      .then(payload => {
+      dispatch({ type: 'LOADING_FAVORITE_TRAILS' })
+      return fetch('/api/notes', {
+      method: "get", headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }})
+          .then(response => {
+            return response.json()
+          }).then(payload => dispatch({ type: 'SHOW_FAVORITE_TRAILS', payload }))
+      });
+  }
+}
+
+export function deleteTrail(trailId) {
+  return (dispatch) => {
+    dispatch({ type: 'DELETING_TRAIL' })
+    return fetch(`/api/notes/${noteId}`, {
+      method: "delete",
+       headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }
+    })
+    .then(payload => {
+    dispatch({ type: 'LOADING_FAVORITE_TRAILS' })
+    return fetch('/api/notes', {
+    method: "get", headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }})
+        .then(response => {
+          return response.json()
+        }).then(payload => dispatch({ type: 'SHOW_FAVORITE_TRAILS', payload }))
+    });
+  }
+}
+
 export function getTrails() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_TRAILS' })
