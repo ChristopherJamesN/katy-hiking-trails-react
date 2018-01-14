@@ -2,7 +2,7 @@ export function getFavoriteTrails() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_FAVORITE_TRAILS' })
     var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
-      targetUrl = 'https://katy-hiking-trails.herokuapp.com/trails.json'
+      targetUrl = 'https://katy-hiking-trails.herokuapp.com/trails/favorites.json'
     return fetch(proxyUrl + targetUrl, {
     method: "get", headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }})
         .then(response => {
@@ -22,7 +22,9 @@ export function persistTrail(name, description, link, comments) {
   });
   return (dispatch) => {
     dispatch({ type: 'SAVING_TRAIL' })
-    return fetch('/api/notes', {
+    var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
+      targetUrl = 'https://katy-hiking-trails.herokuapp.com/trails/favorites'
+    return fetch(proxyUrl + targetUrl, {
       method: "post", body: noteInfo, headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }})
       .then(response => response.json()).then(payload => dispatch({ type: 'ADD_TRAIL', payload }));
   }
@@ -31,7 +33,9 @@ export function persistTrail(name, description, link, comments) {
 export function updateTRAIL(trailId, name, description, link, comments) {
   return (dispatch) => {
     dispatch({ type: 'SAVING_TRAIL' })
-    return fetch(`/api/notes/${trailId}`, {
+    var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
+      targetUrl = `https://katy-hiking-trails.herokuapp.com/trails/favorites/${trailId}`
+    return fetch(proxyUrl + targetUrl, {
       method: "put", body: JSON.stringify({note:{
         name: name,
         description: description,
@@ -43,7 +47,7 @@ export function updateTRAIL(trailId, name, description, link, comments) {
       .then(response => response.json()).then(payload => dispatch({ type: 'SAVING_NOTE' }))
       .then(payload => {
       dispatch({ type: 'LOADING_FAVORITE_TRAILS' })
-      return fetch('/api/notes', {
+      return fetch(proxyUrl + 'https://katy-hiking-trails.herokuapp.com/trails/favorites', {
       method: "get", headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }})
           .then(response => {
             return response.json()
@@ -55,13 +59,15 @@ export function updateTRAIL(trailId, name, description, link, comments) {
 export function deleteTrail(trailId) {
   return (dispatch) => {
     dispatch({ type: 'DELETING_TRAIL' })
-    return fetch(`/api/notes/${trailId}`, {
+    var proxyUrl = 'https://hidden-reaches-61697.herokuapp.com/',
+      targetUrl = `https://katy-hiking-trails.herokuapp.com/trails/favorites/${trailId}`
+    return fetch(proxyUrl + targetUrl, {
       method: "delete",
        headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }
     })
     .then(payload => {
     dispatch({ type: 'LOADING_FAVORITE_TRAILS' })
-    return fetch('/api/notes', {
+    return fetch(proxyUrl + 'https://katy-hiking-trails.herokuapp.com/trails/favorites', {
     method: "get", headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }})
         .then(response => {
           return response.json()
