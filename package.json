@@ -4,12 +4,12 @@
   "private": true,
   "proxy": "https://katy-hiking-trails.herokuapp.com/",
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.2",
-    "jquery": "^3.2.1",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
     "newrelic": "^2.5.0",
-    "react": "^16.2.0",
+    "react": "^16.8.6",
     "react-bootstrap": "^0.31.5",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.8.6",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
@@ -17,7 +17,7 @@
     "react-transition-group": "^2.2.1",
     "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
+    "redux-thunk": "^2.3.0",
     "xmlhttprequest": "^1.8.0"
   },
   "scripts": {
