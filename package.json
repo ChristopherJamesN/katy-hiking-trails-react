@@ -5,7 +5,7 @@
   "proxy": "https://katy-hiking-trails.herokuapp.com/",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "newrelic": "^5.10.0",
     "react": "^16.8.6",
     "react-bootstrap": "^0.31.5",
