@@ -15,7 +15,7 @@
     "react-scripts": "^4.0.1",
     "react-transition-group": "^2.2.1",
     "reactstrap": "^5.0.0-alpha.4",
-    "redux": "^3.7.2",
+    "redux": "^4.2.1",
     "redux-thunk": "^2.3.0",
     "xmlhttprequest": "^1.8.0"
   },
